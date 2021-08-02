@@ -7,16 +7,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 import datetime
 key={
-  "type": "service_account",
-  "project_id": "notepad01-8ffb5",
-  "private_key_id": "f9b2d70a820d49d601e47116b2eb92ba8cc0e177",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7gwTxdAMFqKzI\nFQjK9TZqy3+TGXxpfTND4Ai20Rhtpvo7DYJ2NrOWn96+N3K6C07jGlyqzbfDoXvF\nYNsmoB6wcoROFq39MoRWYRvZstcgIYYNheH8ecm35adjo5ywQInpGhr0dIgNLcqy\n4xGxH4Fhux29O4eMDY5p/4i3WubqeqaQsAYa3i0FMOOcdfdb7QsUN7VNL+kcmGO4\nykWEX/VuheAk/OdZy4pc0G6C1bsFOfLSXFq2F+Qj2bzXBZ308pf8qTUIGo9YIQIX\nk+b+034bj+yyub+A9jArIM1dlJsEPL9y4/gpvVxO0p/CsCci1gDG8ZJyRK4ilMcU\nGbcIzETzAgMBAAECggEADQSS27WaTBvZTUNOStMjmCdQ4jHteoTLXVWvrlTtnDvM\nJqo+cJSOxBofP/LgGJPfiy2WWalSQETQeM9d4wEHErHC4omLsCtbhPH50JO+pRVq\nKBcK9qtB2pKrd1GM96737T33cD4XbaY6D1BrgCihEZJR4PIK7ATvxb4e1UrFlY3z\nh45bI80nXNt+yPX74JUx9WSnKNzosCSgj8sTHmEMLJAh7f7/PuptG+aZgVoByAct\nC67HBUfT8hkNNB9rJcucNcduz1Ar1dvi5CvwOVlChyGu6AELQ1A0v1KLKbEKMO1u\nNSDYYYtaDFo/p1OFKYUULtGNBd6L1tqr8xhM866MaQKBgQDpwLZOTAIfWOxI0tsm\n0oTHV/9B8ipEQYdcfUq0tTzGBGIP/0t+1vtxmKNNKEr9y/L64DtK0unOMLRFf/0b\nBqrTSe7ZrK26KNRb9Nopza43kNTSl4/woj/iFEWEWDSSUPD3dwqdD0J/NDxT0k4H\nkIZOeyx3W5FF19lVZjKkoLjB5QKBgQDNW6o/ftl/A9+SaRL9oTpF8+evwXQcQZi/\nzL+BGgJqZQz7U+pLjiQE9WKC7ci4Xeqf6hGrh9ZlMR5yu4M2F5vijaD/CBzxhlmK\nLzvuZF5DbN/I8tscGjby3HgBbhT1UqEKOZ4YgNulrtJrhRNAdeI4dGy4vK8lyaV+\n162AaiVd9wKBgCiHXFSZAykyPs2lmY/Somj5ze0+Mqvg/LpBkwlf/yiKLAKADjPw\nzGn2wCGpoc79ZKSw6jbf+N/iO+9s8JKWBlpaEEq3kOudFqzW+FiVK+bAetYEp1Ve\nnFrzjtYSgRL5a75Mao+uzKXHhco2xYa0PUUwQBZ1zutgMHOJI7C9mSstAoGANTWc\nHkmq50tEobYSEp+07q0tChAxGqUwg/n0YOoxWAoI3BI5MgyJbrN6K/yatpK3GWpX\n278doSiiAA5wCBMD9CbIYWxju30ZNEHa4IEnH4dVUMcEWPq95B2WBqDUU2Buk6ys\nNyMkRoDOysc3Xstsqz4XcaKKK1tdQ0l1DkHynq8CgYEAk4MbhHXurxHoJiZmSHPt\nTbdkVx+6/ojwqR1ZB6IuszTKIrvq1Mjp6XYkzzkLVAhRkgO7lIgu+dhMuUr0iKMy\nTE5d0M7b2ZQe0IH8SqL+FbS6oW6VuSgFeEmP8qaN1EwIwS6/pcAGczH6/31PEiVA\nBqhJSsbfGMXnETCe7UU/+bw=\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-ni0ei@notepad01-8ffb5.iam.gserviceaccount.com",
-  "client_id": "113774512200315815438",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ni0ei%40notepad01-8ffb5.iam.gserviceaccount.com"
+  "api from fire base"
 }
 
 #function

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Note</title>
+    <!-- Introduce Bootstrap -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <!-- <script src="{{url_for('static', filename='/js/main.js')}}"></script> -->
+    <link
+      href="{{ url_for('static', filename='/css/note.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="container" ng-app="todoapp">
+      <header>
+        <h1 style="text-align: center" class="display-3">TODO LIST</h1>
+        <hr />
+        <h6>Doing task: <span class="badge bg-danger">{{len}}</span></h6>
+        <h6>Complete: <span class="badge bg-success">{{len_1}}</span></h6>
+        <h6>
+          Total: <span class="badge bg-info text-dark">{{len_1 + len }}</span>
+        </h6>
+      </header>
+      <section>
+        {% if err != "" %}
+        <div class="alert alert-danger" role="alert">
+          <h6 style="text-align: center">{{err}}</h6>
+        </div>
+        {% endif %}
+
+        <form
+          class="input-group input-group-lg"
+          method="POST"
+          action="/add"
+          name="form"
+        >
+          <div class="input-group mb-3">
+            <input
+              id="text"
+              type="text"
+              class="form-control"
+              placeholder="Task new"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              name="title"
+              maxlength="50"
+              ng-model="text"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+        <div style="margin-top: 20px">
+          {% for item in data %}
+          <ol class="list-group list-group-numbered" style="margin-top: 5px">
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              {% if item['active'] == True %}
+              <div class="ms-2 me-auto col-8">
+                <div class="fw-bold" style="width: 100%">
+                  <h4>Task: {{item['title']}}</h4>
+                </div>
+                <div style="width: 100%">Time: {{item['time']}}</div>
+                <div style="width: 100%">
+                  <div
+                    class="btn-group"
+                    role="group"
+                    aria-label="Basic example"
+                  >
+                    <a
+                      href="/delete/{{item['id']}}"
+                      class="btn btn-danger"
+                      style="border-radius: 5px; margin-left: 7px"
+                      >Delete</a
+                    >
+                    <a
+                      href="/update/{{item['id']}}"
+                      class="btn btn-primary"
+                      style="border-radius: 5px; margin-left: 7px"
+                      >Edit</a
+                    >
+                    <a
+                      href="/complete/{{item['id']}}"
+                      class="btn btn-success"
+                      style="border-radius: 5px; margin-left: 7px"
+                      >Complete</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              {% else %}
+              <div class="ms-2 me-auto col-8" style="margin-top: 5px">
+                <div class="fw-bold">
+                  <h4>
+                    Complete:
+                    <span style="text-decoration-line: line-through">
+                      {{item['title']}}</span
+                    >
+                  </h4>
+                </div>
+                Time: {{item['time']}}
+              </div>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="/undo/{{item['id']}}" class="btn btn-success">Undo</a>
+              </div>
+
+              {% endif %}
+            </li>
+          </ol>
+
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+    <script>
+      var app = angular.module("todoapp", []);
+
+      app.controller("maincontroller", function ($scope, $http) {
+        $http.get("api/data").then(function (response) {
+          $scope.data = JSON.stringify(response.data);
+          console.log($scope.data);
+        });
+      });
+    </script>
+  </body>
+</html>

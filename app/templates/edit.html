@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Note</title>
+    <!-- Introduce Bootstrap -->
+    <link
+      href="{{ url_for('static', filename='/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <!-- <script src="{{url_for('static', filename='/js/main.js')}}"></script> -->
+    <link
+      href="{{ url_for('static', filename='/css/note.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="display-3">Edit Task</h1>
+        <hr />
+      </header>
+      <section>
+        <div>
+          {% if err != "" %}
+          <div class="alert alert-danger" role="alert">
+            <h6 style="text-align: center">{{err}}</h6>
+          </div>
+          {% endif %}
+        <form
+          class="input-group input-group-lg"
+          method="POST"
+          action="/update/{{data.id}}"
+        >
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Task new"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+            name="title"
+            value="{{data.title}}"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="submit"
+            id="button-addon2"
+          >
+            Edit task
+          </button>
+        </form>
+      </div>
+        <div style="margin-top: 50px">
+          <a href="/" class="btn btn-success">Cancel</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
